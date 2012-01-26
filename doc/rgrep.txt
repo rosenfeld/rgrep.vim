@@ -1,0 +1,66 @@
+*rgrep.txt*   Plugin that integrates grep with Vim
+
+INTRODUCTION                                                             *rgrep*
+
+This assume you have set grepprg to something like this:
+
+    set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude=*.min.js\ --exclude=*.log\ $*\ /dev/null
+
+
+This plugin will allow you to run grep from vim, and
+shows the results in a split window.
+
+:RGrep[!] [options] [{pattern} {directory}]                               *:RGrep*
+
+    Search for {pattern} recursively in {directory}.
+    The word under cursor is searched in all files if {pattern} is omitted.
+    Behaves just like the |:grep| command, but will open the |Quickfix| window
+    for you. If [!] is not given the first error is jumped to.
+
+:RGrepAdd [options] [{pattern} {directory}]                            *:RGrepAdd*
+
+    Just like |:RGrep|, but instead of making a new list, the matches are
+    appended to the current |quickfix| list.
+
+:RGrepFromSearch [{directory}]                                  *:RGrepFromSearch*
+
+    Just like |:RGrep| but the pattern is from previous search.
+
+:LRGrep [options] [{pattern} {directory}]                                *:LRGrep*
+
+    Just like |:RGrep| but instead of the |quickfix| list, matches are placed in
+    the current |location-list|.
+
+:LRGrepAdd [options] [{pattern} {directory}]                          *:LRGrepAdd*
+
+    Just like |:RGrepAdd| but instead of the |quickfix| list, matches are added
+    to the current |location-list|
+
+:RGrepFile [options] [{pattern} {directory}]                          *:RGrepFile*
+
+    Search recursively in {directory}.  Behaves just like the
+    |:grep| command, but will open the |Quickfix| window for you.
+
+Files containing the search term will be listed in the split window, along
+with the line number of the occurrence, once for each occurrence.  <Enter> on
+a line in this window will open the file, and place the cursor on the matching
+line.
+
+==============================================================================
+MAPPINGS                                                        *rgrep-mappings*
+
+The following keyboard shortcuts are available in the quickfix window:
+
+o                   open file (same as enter).
+
+go                  preview file (open but maintain focus on rgrep.vim results).
+
+t                   open in a new tab.
+
+T                   open in new tab silently.
+
+v                   open in vertical split.
+
+gv                  open in vertical split silently.
+
+q                   close the quickfix window.
