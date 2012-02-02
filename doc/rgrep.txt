@@ -4,7 +4,7 @@ INTRODUCTION                                                             *rgrep*
 
 This assume you have set grepprg to something like this:
 
-    set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude=*.min.js\ --exclude=*.log\ $*\ /dev/null
+    set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude="*.min.js"\ --exclude="*.log"\ $*\ /dev/null
 
 
 This plugin will allow you to run grep from vim, and

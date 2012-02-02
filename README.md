@@ -7,7 +7,7 @@ Inspired by ack.vim, but works with grep instead of ack.
 
 It is intended to be used with this:
 
-    set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude=*.min.js\ --exclude=*.log\ $*\ /dev/null
+    set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude="*.min.js"\ --exclude="*.log"\ $*\ /dev/null
 
 You can choose whatever arguments you like for grep.
 
