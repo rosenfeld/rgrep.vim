@@ -37,3 +37,8 @@ In the quickfix window, you can use:
     q    to close the quickfix window
 
 This Vim plugin is derived from ack.vim.
+
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rosenfeld/rgrep.vim/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
